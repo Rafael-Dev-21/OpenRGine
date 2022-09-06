@@ -23,13 +23,3 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Generate Docs
-      run: mvn javadoc:aggregate
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@3.5.4
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        CLEAN: true
-        FOLDER: target/site/apidocs
-        TARGET_FOLDER: javadoc
